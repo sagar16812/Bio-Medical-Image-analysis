@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://medium.com/media/cd7b8657e8fbc58d578f32c8aa648777 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Medium</title><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./3f779bb857dd8daecdac182ad1029fb8.js" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-a9a1cf2ca01efd362bfa52312712ae94.css"><div id="gist90052991" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-load_and_feed_from_tfrecord-py" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-python ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">decode</span>(<span class="pl-smi">serialized_example</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">#</span> Decode examples stored in TFRecord</span></td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">#</span> <span class="pl-k">NOTE</span>: make sure to specify the correct dimensions for the images</span></td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC4" class="blob-code blob-code-inner js-file-line">    features <span class="pl-k">=</span> tf.parse_single_example(</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC5" class="blob-code blob-code-inner js-file-line">        serialized_example,</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC6" class="blob-code blob-code-inner js-file-line">        <span class="pl-v">features</span><span class="pl-k">=</span>{<span class="pl-s"><span class="pl-pds">'</span>train/image<span class="pl-pds">'</span></span>: tf.FixedLenFeature([<span class="pl-c1">128</span>, <span class="pl-c1">224</span>, <span class="pl-c1">224</span>, <span class="pl-c1">1</span>], tf.float32),</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC7" class="blob-code blob-code-inner js-file-line">                  <span class="pl-s"><span class="pl-pds">'</span>train/label<span class="pl-pds">'</span></span>: tf.FixedLenFeature([], tf.int64)})</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">#</span> <span class="pl-k">NOTE</span>: No need to cast these features, as they are already `tf.float32` values.</span></td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> features[<span class="pl-s"><span class="pl-pds">'</span>train/image<span class="pl-pds">'</span></span>], features[<span class="pl-s"><span class="pl-pds">'</span>train/label<span class="pl-pds">'</span></span>]</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC12" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> tf.data.TFRecordDataset(train_filename).map(decode)</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC13" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> dataset.repeat(<span class="pl-c1">None</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC14" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> dataset.batch(batch_size)</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC15" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> dataset.prefetch(<span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC17" class="blob-code blob-code-inner js-file-line">iterator <span class="pl-k">=</span> dataset.make_initializable_iterator()</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC18" class="blob-code blob-code-inner js-file-line">features, labels <span class="pl-k">=</span> iterator.get_next()</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC19" class="blob-code blob-code-inner js-file-line">nx <span class="pl-k">=</span> iterator.get_next()</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-k">with</span> tf.train.MonitoredTrainingSession() <span class="pl-k">as</span> sess_rec:</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC22" class="blob-code blob-code-inner js-file-line">    sess_rec.run(iterator.initializer)</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC23" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC24" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">range</span>(iterations):</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC25" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">try</span>:</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC26" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">#</span> Get next features-labels pair</span></td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC27" class="blob-code blob-code-inner js-file-line">            rec_batch_feat, rec_batch_lbl <span class="pl-k">=</span> sess_rec.run([features, labels])</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC28" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC29" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">except</span> tf.errors.OutOfRangeError:</td>
+      </tr>
+      <tr>
+        <td id="file-load_and_feed_from_tfrecord-py-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-load_and_feed_from_tfrecord-py-LC30" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">pass</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/mrajchl/3f779bb857dd8daecdac182ad1029fb8/raw/dab54618eb287cacd18dc44f80ad84545b00c3f2/load_and_feed_from_TFRecord.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/mrajchl/3f779bb857dd8daecdac182ad1029fb8#file-load_and_feed_from_tfrecord-py">load_and_feed_from_TFRecord.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200;function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);}maybeResize();</script></body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://medium.com/media/0b91ef7382315937395647d97e30e8fa -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Medium</title><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./02018f165232e8e5b0882009e818e504.js" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-a9a1cf2ca01efd362bfa52312712ae94.css"><div id="gist90053229" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-feed_from_generator-py" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-python ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-feed_from_generator-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-feed_from_generator-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> Generator function</span></td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-feed_from_generator-py-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">f</span>():</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-feed_from_generator-py-LC3" class="blob-code blob-code-inner js-file-line">    fn <span class="pl-k">=</span> read_fn(<span class="pl-v">file_references</span><span class="pl-k">=</span>all_filenames,</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-feed_from_generator-py-LC4" class="blob-code blob-code-inner js-file-line">                 <span class="pl-v">mode</span><span class="pl-k">=</span>tf.estimator.ModeKeys.<span class="pl-c1">TRAIN</span>, </td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-feed_from_generator-py-LC5" class="blob-code blob-code-inner js-file-line">                 <span class="pl-v">params</span><span class="pl-k">=</span>reader_params)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-feed_from_generator-py-LC6" class="blob-code blob-code-inner js-file-line">    </td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-feed_from_generator-py-LC7" class="blob-code blob-code-inner js-file-line">    ex <span class="pl-k">=</span> <span class="pl-c1">next</span>(fn)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-feed_from_generator-py-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">#</span> Yield the next image</span></td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-feed_from_generator-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">yield</span> ex</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-feed_from_generator-py-LC10" class="blob-code blob-code-inner js-file-line">    </td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-feed_from_generator-py-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> Timed example with generator io</span></td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-feed_from_generator-py-LC12" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> tf.data.Dataset.from_generator(</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-feed_from_generator-py-LC13" class="blob-code blob-code-inner js-file-line">    f, reader_example_dtypes, reader_example_shapes)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-feed_from_generator-py-LC14" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> dataset.repeat(<span class="pl-c1">None</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-feed_from_generator-py-LC15" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> dataset.batch(batch_size)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-feed_from_generator-py-LC16" class="blob-code blob-code-inner js-file-line">dataset <span class="pl-k">=</span> dataset.prefetch(<span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-feed_from_generator-py-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-feed_from_generator-py-LC18" class="blob-code blob-code-inner js-file-line">iterator <span class="pl-k">=</span> dataset.make_initializable_iterator()</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-feed_from_generator-py-LC19" class="blob-code blob-code-inner js-file-line">next_dict <span class="pl-k">=</span> iterator.get_next()</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-feed_from_generator-py-LC20" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-feed_from_generator-py-LC21" class="blob-code blob-code-inner js-file-line"><span class="pl-k">with</span> tf.train.MonitoredTrainingSession() <span class="pl-k">as</span> sess_gen:</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-feed_from_generator-py-LC22" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">#</span> Initialize generator</span></td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-feed_from_generator-py-LC23" class="blob-code blob-code-inner js-file-line">    sess_gen.run(iterator.initializer)</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-feed_from_generator-py-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-feed_from_generator-py-LC25" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">with</span> Timer(<span class="pl-s"><span class="pl-pds">'</span>Generator<span class="pl-pds">'</span></span>):</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-feed_from_generator-py-LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">range</span>(iterations):</td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-feed_from_generator-py-LC27" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">#</span> Fetch the next batch of images</span></td>
+      </tr>
+      <tr>
+        <td id="file-feed_from_generator-py-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-feed_from_generator-py-LC28" class="blob-code blob-code-inner js-file-line">            gen_batch_feat, gen_batch_lbl <span class="pl-k">=</span> sess_gen.run([next_dict[<span class="pl-s"><span class="pl-pds">'</span>features<span class="pl-pds">'</span></span>], next_dict[<span class="pl-s"><span class="pl-pds">'</span>labels<span class="pl-pds">'</span></span>]])</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/mrajchl/02018f165232e8e5b0882009e818e504/raw/066cd4dfed840a2770a52957afb0e01ea582e1a9/feed_from_generator.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/mrajchl/02018f165232e8e5b0882009e818e504#file-feed_from_generator-py">feed_from_generator.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200;function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);}maybeResize();</script></body></html>
